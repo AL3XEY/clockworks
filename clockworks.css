@@ -16,6 +16,13 @@
     background-color: red;
 }
 
+#binary-bs polygon{
+    fill: lightgrey;
+}
+#binary-bs polygon.on{
+    fill: red;
+}
+
 #binary-std > div{
     float: left;
 }

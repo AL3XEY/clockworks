@@ -201,6 +201,55 @@ function binaryAlt(){
     if(bs[5] == '1'){ $('#binary-alt-s .binary-1').addClass('on'); }else{ $('#binary-alt-s .binary-1').removeClass('on'); }
 }
 
+function binaryBs(){
+    let bh;
+
+    bh = (h%12).toString(2);
+
+    // add leading zeros so that it matches exactly the format
+    let missingZeros ;
+    if(bh.length < 4){
+        missingZeros = 4 - bh.length;
+        for(i=0;i<missingZeros;i++){
+            bh = '0' + bh;
+        }
+    }
+
+    // for each char in string, 0 = off and 1 = on
+    if(bh[0] == '1'){ $('.binary-bs-h-8').addClass('on'); }else{ $('.binary-bs-h-8').removeClass('on'); }
+    if(bh[1] == '1'){ $('.binary-bs-h-4').addClass('on'); }else{ $('.binary-bs-h-4').removeClass('on'); }
+    if(bh[2] == '1'){ $('.binary-bs-h-2').addClass('on'); }else{ $('.binary-bs-h-2').removeClass('on'); }
+    if(bh[3] == '1'){ $('.binary-bs-h-1').addClass('on'); }else{ $('.binary-bs-h-1').removeClass('on'); }
+
+    let m30 = 0;
+    let m15 = 0;
+    if(m > 45){
+        m30 = 1;
+        m15 = 1;
+        m = 45 - m;
+    }else if(m > 30){
+        m30 = 1;
+        m = 30 - m;
+    }else if(m > 15){
+        m15 = 1;
+        m = 15 - m;
+    }
+
+    if(m30){ $('.binary-bs-m-30').addClass('on'); }else{ $('.binary-bs-m-30').removeClass('on'); }
+    if(m15){ $('.binary-bs-m-15').addClass('on'); }else{ $('.binary-bs-m-15').removeClass('on'); }
+
+    let bm = m.toString(2);
+    if(bm.length < 4){
+        missingZeros = 4 - bm.length;
+        for(i=0;i<missingZeros;i++){
+            bm = '0' + bm;
+        }
+    }
+    if(bm[0] == '1'){ $('.binary-bs-m-8').addClass('on'); }else{ $('.binary-bs-m-8').removeClass('on'); }
+    if(bm[1] == '1'){ $('.binary-bs-m-4').addClass('on'); }else{ $('.binary-bs-m-4').removeClass('on'); }
+    if(bm[2] == '1'){ $('.binary-bs-m-2').addClass('on'); }else{ $('.binary-bs-m-2').removeClass('on'); }
+    if(bm[3] == '1'){ $('.binary-bs-m-1').addClass('on'); }else{ $('.binary-bs-m-1').removeClass('on'); }
+}
 
 initWatch();
 justTime(); //
@@ -209,3 +258,4 @@ setInterval(justTime, 1000);
 setInterval(watch, 1000);
 setInterval(binary, 1000);
 setInterval(binaryAlt, 1000);
+setInterval(binaryBs, 1000);
