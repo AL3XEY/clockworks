@@ -3,17 +3,18 @@ A JavaScript clock museum
 
 Or different ways of displaying time in JS
 
-#About
+# About
 
 It's simply a personal project to train JavaScript and UI.
 
 Uses jQuery. Also Bootstrap for demo.
 
-#TODO
+# TODO
 
 Basic features :
 * Alarm (Digital)
 * Binary
+* Binary - Alternative version
 * Black Standard Binary
 * Pendulum
 * Grandfather
@@ -28,6 +29,8 @@ Graphical :
 Other :
 * Sound
 
-#Resources
+# Resources
 
 https://www.timecenter.com/articles/ultimate-collection-of-clock-resources/
+
+https://www.romanblack.com/binclk.htm
