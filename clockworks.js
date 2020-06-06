@@ -71,6 +71,87 @@ function watch(){
     $('#watch-s').attr('y2', ys);
 }
 
+function binary(){
+    let bh10, bh1, bm10, bm1, bs10, bs1;
+
+    hh = ''+pad(h, 2);
+    mm = ''+pad(m, 2);
+    ss = ''+pad(s, 2);
+
+    bh10 = parseInt(hh[0]).toString(2);
+    bh1 = parseInt(hh[1]).toString(2);
+    bm10 = parseInt(mm[0]).toString(2);
+    bm1 = parseInt(mm[1]).toString(2);
+    bs10 = parseInt(ss[0]).toString(2);
+    bs1 = parseInt(ss[1]).toString(2);
+
+    let missingZeros;
+    if(bh10.length < 3){
+        missingZeros = 3 - bh10.length;
+        for(i=0;i<missingZeros;i++){
+            bh10 = '0' + bh10;
+        }
+    }
+    if(bh1.length < 4){
+        missingZeros = 4 - bh1.length;
+        for(i=0;i<missingZeros;i++){
+            bh1 = '0' + bh1;
+        }
+    }
+    if(bm10.length < 3){
+        missingZeros = 3 - bm10.length;
+        for(i=0;i<missingZeros;i++){
+            bm10 = '0' + bm10;
+        }
+    }
+    if(bm1.length < 4){
+        missingZeros = 4 - bm1.length;
+        for(i=0;i<missingZeros;i++){
+            bm1 = '0' + bm1;
+        }
+    }
+    if(bs10.length < 3){
+        missingZeros = 3 - bs10.length;
+        for(i=0;i<missingZeros;i++){
+            bs10 = '0' + bs10;
+        }
+    }
+    if(bs1.length < 4){
+        missingZeros = 4 - bs1.length;
+        for(i=0;i<missingZeros;i++){
+            bs1 = '0' + bs1;
+        }
+    }
+
+    if(bh10[0] == '1'){ $('#binary-h10 .binary-4').addClass('on'); }else{ $('#binary-h10 .binary-4').removeClass('on'); }
+    if(bh10[1] == '1'){ $('#binary-h10 .binary-2').addClass('on'); }else{ $('#binary-h10 .binary-2').removeClass('on'); }
+    if(bh10[2] == '1'){ $('#binary-h10 .binary-1').addClass('on'); }else{ $('#binary-h10 .binary-1').removeClass('on'); }
+
+    if(bh1[0] == '1'){ $('#binary-h1 .binary-8').addClass('on'); }else{ $('#binary-h1 .binary-8').removeClass('on'); }
+    if(bh1[1] == '1'){ $('#binary-h1 .binary-4').addClass('on'); }else{ $('#binary-h1 .binary-4').removeClass('on'); }
+    if(bh1[2] == '1'){ $('#binary-h1 .binary-2').addClass('on'); }else{ $('#binary-h1 .binary-2').removeClass('on'); }
+    if(bh1[3] == '1'){ $('#binary-h1 .binary-1').addClass('on'); }else{ $('#binary-h1 .binary-1').removeClass('on'); }
+
+    if(bm10[0] == '1'){ $('#binary-m10 .binary-4').addClass('on'); }else{ $('#binary-m10 .binary-4').removeClass('on'); }
+    if(bm10[1] == '1'){ $('#binary-m10 .binary-2').addClass('on'); }else{ $('#binary-m10 .binary-2').removeClass('on'); }
+    if(bm10[2] == '1'){ $('#binary-m10 .binary-1').addClass('on'); }else{ $('#binary-m10 .binary-1').removeClass('on'); }
+
+    if(bm1[0] == '1'){ $('#binary-m1 .binary-8').addClass('on'); }else{ $('#binary-m1 .binary-8').removeClass('on'); }
+    if(bm1[1] == '1'){ $('#binary-m1 .binary-4').addClass('on'); }else{ $('#binary-m1 .binary-4').removeClass('on'); }
+    if(bm1[2] == '1'){ $('#binary-m1 .binary-2').addClass('on'); }else{ $('#binary-m1 .binary-2').removeClass('on'); }
+    if(bm1[3] == '1'){ $('#binary-m1 .binary-1').addClass('on'); }else{ $('#binary-m1 .binary-1').removeClass('on'); }
+
+    if(bs10[0] == '1'){ $('#binary-s10 .binary-4').addClass('on'); }else{ $('#binary-s10 .binary-4').removeClass('on'); }
+    if(bs10[1] == '1'){ $('#binary-s10 .binary-2').addClass('on'); }else{ $('#binary-s10 .binary-2').removeClass('on'); }
+    if(bs10[2] == '1'){ $('#binary-s10 .binary-1').addClass('on'); }else{ $('#binary-s10 .binary-1').removeClass('on'); }
+
+    if(bs1[0] == '1'){ $('#binary-s1 .binary-8').addClass('on'); }else{ $('#binary-s1 .binary-8').removeClass('on'); }
+    if(bs1[1] == '1'){ $('#binary-s1 .binary-4').addClass('on'); }else{ $('#binary-s1 .binary-4').removeClass('on'); }
+    if(bs1[2] == '1'){ $('#binary-s1 .binary-2').addClass('on'); }else{ $('#binary-s1 .binary-2').removeClass('on'); }
+    if(bs1[3] == '1'){ $('#binary-s1 .binary-1').addClass('on'); }else{ $('#binary-s1 .binary-1').removeClass('on'); }
+
+}
+
 function binaryAlt(){
     let bh, bm, bs;
 
@@ -126,4 +207,5 @@ justTime(); //
 watch(); //
 setInterval(justTime, 1000);
 setInterval(watch, 1000);
+setInterval(binary, 1000);
 setInterval(binaryAlt, 1000);
