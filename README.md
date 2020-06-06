@@ -1,14 +1,17 @@
 # clockworks
 A JavaScript clock museum
 
-Or ifferent ways of displaying time in JS
+Or different ways of displaying time in JS
 
 #About
 
 It's simply a personal project to train JavaScript and UI.
 
+Uses jQuery. Also Bootstrap for demo.
+
 #TODO
 
+Basic features :
 * Alarm (Digital)
 * Binary
 * Black Standard Binary
@@ -21,6 +24,9 @@ It's simply a personal project to train JavaScript and UI.
 Graphical :
 * Cuckoo / Striking
 * Astronomical
+
+Other :
+* Sound
 
 #Resources
 
